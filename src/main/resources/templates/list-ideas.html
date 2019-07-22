@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Ideas</title>
+</head>
+<body>
+    <div class="container">
+
+        <h3>Idea Repository</h3>
+        <hr>
+
+        <a th:href="@{/idea/addForm}" class="btn btn-primary btn-sm mb-3">Add new Idea</a>
+
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Headline</th>
+                    <th>Description</th>
+                    <th>Tags</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="idea : ${ideas}">
+                    <td th:text="${idea.headline}"></td>
+                    <td th:text="${idea.description}"></td>
+                    <td th:text="${idea.tags}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
