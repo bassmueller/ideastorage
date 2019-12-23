@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>New Idea</title>
+</head>
+<body>
+    <div class="container">
+
+        <h3>Idea Repository</h3>
+        <hr>
+
+        <p class="h4 mb-4">Add new Idea</p>
+
+        <form action="#" th:action="@{/mongo/idea/save}" th:object="${idea}" method="post">
+            <input type="text" th:field="*{headline}" class="form-control mb-4 col-4" placeholder="Headline" />
+            <input type="text" th:field="*{description}" class="form-control mb-4 col-4" placeholder="Description" />
+            <input type="text" th:field="*{tags}" class="form-control mb-4 col-4" placeholder="Tags" />
+            <input type="text" th:field="*{score}" class="form-control mb-4 col-4" placeholder="Score" />
+            <button type="submit" class="btn btn-info col-2">Save</button>
+        </form>
+
+    </div>
+</body>
+</html>

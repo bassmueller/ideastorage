@@ -14,15 +14,16 @@
         <h3>Idea Repository</h3>
         <hr>
 
-        <a th:href="@{/idea/addForm}" class="btn btn-primary btn-sm mb-3">Add new Idea</a>
+        <a th:href="@{/mongo/idea/addForm}" class="btn btn-primary btn-sm mb-3">Add new Idea</a>
 
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
+                    <th>ObjectId</th>
                     <th>Headline</th>
                     <th>Description</th>
                     <th>Tags</th>
+                    <th>Score</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,7 @@
                     <td th:text="${idea.headline}"></td>
                     <td th:text="${idea.description}"></td>
                     <td th:text="${idea.tags}"></td>
+                    <td th:text="${idea.score}" ></td>
                 </tr>
             </tbody>
         </table>
